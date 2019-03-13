@@ -1,0 +1,117 @@
+:root {
+    --colorOne: #d5ecf4;
+    --colorTwo: #e5efd9;
+    --colorThree: #fcf8c0;
+    --colorFour: #ebebeb;
+    --colorFive: #f4c5c3;
+    --colorSix: #e4efd8;
+    --colorSeven: #fcf8c0;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+ul {
+    list-style: none;
+}
+ul, li {
+    margin: 0;
+    padding: 0;
+}
+.threeGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.header {
+    margin-top: 50px;
+    margin-bottom: 150px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.header h1 {
+    margin-top: 0;
+    font-size: 60px;
+}
+
+.header .header__column {
+    display: flex;
+    justify-content: space-around;
+}
+
+.header__nav span {
+    display: block;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: rgba(0,0,0,0.4);
+}
+.header__nav li {
+    margin-bottom: 10px;
+}
+.header__nav li:last-child {
+    margin-bottom: 0;
+}
+
+.grid {
+    grid-auto-rows: 30vh;
+    grid-gap: 10px;
+}
+
+.grid .grid__item {
+    background-size: cover;
+    background-position: center center;
+}
+
+.grid .grid__item:first-child {
+    grid-row: span 2;
+    background-color:var(--colorOne);
+}
+.grid .grid__item:nth-child(2) {
+    grid-area: span 2 / span 2;
+    background-image: url(http://www.ikea.com/ms/media/rooms/20193/living_room/20193_rmli03a/20193_rmli03a_01_PH157835.jpg);
+}
+.grid .grid__item:nth-child(3) {
+    background-color:var(--colorTwo);
+}
+.grid .grid__item:nth-child(4) {
+    grid-row: span 2;
+    background-image: url(http://www.ikea.com/ms/media/rooms/20191/home_office/20191_rmoh02a/20191_rmoh02a_01_PH153168.jpg);
+}
+.grid .grid__item:nth-child(5) {
+    background-color:var(--colorThree);
+}
+.grid .grid__item:nth-child(6) {
+    background-color:var(--colorFour);
+}
+.grid .grid__item:nth-child(7) {
+    background-image: url(https://www.ikea.com/ms/img/ads/vitality/20193/message_in_product_list/seo_image/ikea-ivar__20193_semp41a_01_PH157400.jpg);
+}
+.grid .grid__item:nth-child(8) {
+    grid-area: span 2 / span 2;
+    background-color:var(--colorFive);
+}
+.grid .grid__item:nth-child(9) {
+    grid-area: span 2;
+    background-image: url(http://www.ikea.com/ms/media/rooms/20193/bedroom/20193_rmbe01a/20193_rmbe01a_01_PH158683.jpg);
+}
+.grid .grid__item:nth-child(10) {
+    grid-area: span 2 / span 2;
+    background-image: url(http://www.ikea.com/ms/media/rooms/20193/bedroom/20193_rmbe04a/20193_rmbe04a_01_PH158081.jpg);
+}
+.grid .grid__item:nth-child(11) {
+    background-image: url(http://www.ikea.com/ms/media/rooms/20193/bedroom/20193_rmbe05a/20193_rmbe05a_01_PH158373.jpg);
+}
+.grid .grid__item:nth-child(12) {
+    background-image: url(http://www.ikea.com/ms/media/rooms/20193/bedroom/20193_rmbe10a/20193_rmbe10a_01_PH156934.jpg);
+}
+.grid .grid__item:nth-child(13) {
+    grid-area: span 2 / span 2;
+    background-color:var(--colorSix);
+}
+.grid .grid__item:nth-child(14) {
+    background-image: url(http://www.ikea.com/ms/media/rooms/20192/hallway/20192_rmha02a/20192_rmha02a_01_PH154688.jpg);
+}
+.grid .grid__item:last-child {
+    background-color:var(--colorSeven);
+}
