@@ -6,6 +6,9 @@
     --colorFive: #f4c5c3;
     --colorSix: #e4efd8;
     --colorSeven: #fcf8c0;
+    --linkcolor: #2c3e50;
+    --category: #95a5a6;
+    --article: #7f8c8d;
 }
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
@@ -61,6 +64,32 @@ ul, li {
 .grid .grid__item {
     background-size: cover;
     background-position: center center;
+}
+.grid .grid__item {
+    display: flex;
+}
+.grid .grid__item .column {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.grid .grid__item .column span {
+    color:var(--category);
+    font-weight: 300;
+    font-size: 15px;
+}
+.grid .grid__item .column p {
+    color:var(--article);
+    margin-top: 0;
+    line-height: 22px;
+    font-weight: 300;
+}
+.grid .grid__item .column a {
+    color:var(--linkcolor);
+    text-decoration: none;
+    bottom: 13vh;
+    display: block;
+    position: absolute;
 }
 
 .grid .grid__item:first-child {
