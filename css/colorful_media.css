@@ -1,0 +1,13 @@
+@custom-media --ipad-size (960 >= width < 961px);
+@media (--ipad-size) {
+    .header {
+        margin-bottom: 100px;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .grid .grid__item:first-child {
+        grid-row: span 1;
+    }
+}
