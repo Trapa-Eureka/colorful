@@ -1,9 +1,11 @@
-@custom-media --ipad-size (960 >= width < 961px);
-@media (--ipad-size) {
-    .header {
-        margin-bottom: 100px;
-    }
-    .grid {
+:root {
+    --screenMdMin: 960px;
+}
+
+@custom-media --small (width <= 960px);
+
+@media (--small) {
+    .threeGrid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
