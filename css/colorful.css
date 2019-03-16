@@ -165,12 +165,65 @@ ul, li {
 */
 
 @media (max-width: 960px) {
+    .header {margin-bottom: 60px;}
     .grid .grid__item:first-child {grid-row: span 1;}
-    .grid .grid__item:first-child .column h1, .grid .grid__item:nth-child(6) .column h1 {font-size: 29px;}
-    .grid .grid__item:first-child .column p, .grid .grid__item:nth-child(6) .column p {font-size: 16px; line-height: 19.5px;}
-    .grid .grid__item:first-child .column a {top: 17px; font-size: 14px;}
+    .grid .grid__item:first-child .column h1, .grid .grid__item:nth-child(6) .column h1,
+    .grid .grid__item:nth-child(8) .column h1, .grid .grid__item:nth-child(13) .column h1 {font-size: 29px;}
+    .grid .grid__item:first-child .column p, .grid .grid__item:nth-child(6) .column p,
+    .grid .grid__item:nth-child(8) .column p, .grid .grid__item:nth-child(13) .column p {font-size: 16px; line-height: 19.5px;}
+    .grid .grid__item:first-child .column a {top: -60px; font-size: 14px;}
 
     .grid .grid__item:nth-child(3) .column .describe, .grid .grid__item:nth-child(5) .column .describe {font-size: 14px; margin-top: 3vh; line-height: 18px;}
 
     .grid .grid__item:nth-child(7) {grid-column: span 2;}
+    .grid .grid__item:nth-child(8) {grid-area: span 1 / span 2;}
+    .grid .grid__item:nth-child(8) .column a {margin-top: 22.8vh; font-size: 14px;}
+    .grid .grid__item:nth-child(9) {grid-area: span 1;}
+
+    .grid .grid__item:nth-child(13) {grid-area: span 1 / span 1;}
+}
+
+@media (max-width: 640px) {
+    .grid {grid-auto-rows: 23vh;}
+    .grid .grid__item:first-child, .grid .grid__item:nth-child(13) {grid-column: span 3;}
+    .grid .grid__item:first-child .column h1 {margin: 10px 0px 10px 0px;}
+    .grid .grid__item:first-child .column a {top: -130px;}
+
+    .grid .grid__item:nth-child(3) .column {padding: 30px;}
+    .grid .grid__item:nth-child(3) .column .describe,
+    .grid .grid__item:nth-child(5) .column .describe {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 6; /* number of lines to show */
+        -webkit-box-orient: vertical;
+    }
+    .grid .grid__item:nth-child(4) {grid-row: span 1;}
+    .grid .grid__item:nth-child(7) {grid-column: span 1;}
+    .grid .grid__item:nth-child(14) {grid-column: span 2;}
+}
+
+@media (max-width: 480px) {
+    * {box-sizing: border-box;}
+    .grid {box-sizing: border-box;}
+    .grid .grid__item:nth-child(2) {grid-area: span 1 / span 3;}
+    .grid .grid__item:nth-child(3), .grid .grid__item:nth-child(4), .grid .grid__item:nth-child(5),
+    .grid .grid__item:nth-child(6), .grid .grid__item:nth-child(7), .grid .grid__item:nth-child(8),
+    .grid .grid__item:nth-child(9), .grid .grid__item:nth-child(10), .grid .grid__item:nth-child(11),
+    .grid .grid__item:nth-child(12), .grid .grid__item:nth-child(13), .grid .grid__item:last-child {grid-column: span 3;}
+    .grid .grid__item:nth-child(14) {grid-area: span 2 / span 3;}
+
+    .grid .grid__item:first-child .column, .grid .grid__item:nth-child(3) .column, .grid .grid__item:nth-child(5) .column,
+    .grid .grid__item:nth-child(6) .column, .grid .grid__item:nth-child(8) .column, .grid .grid__item:nth-child(13) .column {padding: 20px;}
+
+    .grid .grid__item:first-child .column h1, .grid .grid__item:nth-child(6) .column h1, .grid .grid__item:nth-child(8) .column h1,
+    .grid .grid__item:nth-child(13) .column h1 
+    {font-size: 26px; margin: 7px 0px 7px 0px;}
+
+    .grid .grid__item:first-child .column p, .grid .grid__item:nth-child(6) .column p, .grid .grid__item:nth-child(8) .column p, .grid .grid__item:nth-child(3) .column .describe, .grid .grid__item:nth-child(5) .column .describe
+    {font-size: 14px; line-height: 15px; text-overflow: ellipsis; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
+
+    .grid .grid__item:first-child .column a {top: -37px;}
+    .grid .grid__item:nth-child(8) .column a {margin-top: 15.6vh;}
+    .grid .grid__item:nth-child(8) .column p {font-size: 14px; line-height: 15px;}
 }
