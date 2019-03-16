@@ -163,8 +163,11 @@ ul, li {
 	 }
 }
 */
-
+@media (min-width: 961px) {
+    .m-header {display: none;}
+}
 @media (max-width: 960px) {
+    .m-header {display: none; }
     .header {margin-bottom: 60px;}
     .grid .grid__item:first-child {grid-row: span 1;}
     .grid .grid__item:first-child .column h1, .grid .grid__item:nth-child(6) .column h1,
@@ -184,6 +187,7 @@ ul, li {
 }
 
 @media (max-width: 640px) {
+    .m-header {display: none;}
     .grid {grid-auto-rows: 23vh;}
     .grid .grid__item:first-child, .grid .grid__item:nth-child(13) {grid-column: span 3;}
     .grid .grid__item:first-child .column h1 {margin: 10px 0px 10px 0px;}
@@ -204,6 +208,7 @@ ul, li {
 }
 
 @media (max-width: 480px) {
+    .header {display: none;}
     * {box-sizing: border-box;}
     .grid {box-sizing: border-box;}
     .grid .grid__item:nth-child(2) {grid-area: span 1 / span 3;}
@@ -223,7 +228,46 @@ ul, li {
     .grid .grid__item:first-child .column p, .grid .grid__item:nth-child(6) .column p, .grid .grid__item:nth-child(8) .column p, .grid .grid__item:nth-child(3) .column .describe, .grid .grid__item:nth-child(5) .column .describe
     {font-size: 14px; line-height: 15px; text-overflow: ellipsis; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
 
-    .grid .grid__item:first-child .column a {top: -37px;}
+    .grid .grid__item:first-child .column a {top: -26vh;}
     .grid .grid__item:nth-child(8) .column a {margin-top: 15.6vh;}
     .grid .grid__item:nth-child(8) .column p {font-size: 14px; line-height: 15px;}
+
+    /* hamburger menu style for mobile */
+    .m-header {display: block; position: relative; top: 0; left: 0; width: 100%; height: 60px;}
+    .m-header h1 {display: inline-block; position: relative; margin: 0; top: 7px;}
+    .m-header .button_container {display: block; position: relative; top: 13px; right: 0.5%; float: right; height: 27px; width: 35px; cursor: pointer; z-index: 100; transition: opacity .25s ease;}
+    .m-header .button_container:hover {opacity: .7;}
+
+    .m-header .button_container.active .top {transform: translateY(11px) translateX(0) rotate(45deg); background: #FFF;}
+    .m-header .button_container.active .middle {opacity: 0; background: #fff;}
+    .m-header .button_container.active .bottom {transform: translateY(-11px) translateX(0) rotate(-45deg); background: #fff;}
+
+    .m-header .button_container span {background: #ff6f61; border: none; height: 5px; width: 100%; position: absolute; top: 0; left: 0; transition: all .35s ease; cursor: pointer; border-radius: 50px;}
+    .m-header .button_container span:nth-of-type(2) {top: 11px;}
+    .m-header .button_container span:nth-of-type(3) {top: 22px;}
+
+    .m-header .overlay {position: fixed; background: #ff6f61; top: 0; left: 0; width: 100%; height: 0%; opacity: 1; visibility: hidden; transition: opacity .35s, visibility .35s, height .35s; overflow: hidden; z-index: 1;}
+    .m-header .overlay.open {opacity: .9; visibility: visible; height: 100%;}
+    .m-header .overlay.open li {animation: fadeInRight .5s ease forwards; animation-delay: .35s;}
+    .m-header .overlay.open li:nth-of-type(2) {animation-delay: .4s;}
+    .m-header .overlay.open li:nth-of-type(3) {animation-delay: .45s;}
+    .m-header .overlay.open li:nth-of-type(4) {animation-delay: .50s;}
+
+    .m-header .overlay nav {position: relative; height: 70%; top: 53%; transform: translateY(-50%); font-size: 40px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 400; text-align: center;}
+    .m-header .overlay ul {list-style: none; padding: 0; margin: 0 auto; display: inline-block; position: relative; height: 100%;}
+    .m-header .overlay ul li {display: block; height: 25%; height: calc(100% / 4); min-height: 50px; position: relative; opacity: 0;}
+    .m-header .overlay ul li span {display: block; position: relative; color: #fff; text-decoration: none; overflow: hidden; font-size: 30px;}
+    .m-header .overlay ul li a {display: inline-block; position: relative; text-align: center; color: #fff; text-decoration: none; font-size: 22px; font-weight: 200;}
+    .m-header .overlay ul li a:hover:after, .m-header .overlay ul li a:focus:after, .m-header .overlay ul li a:active:after {width: 100%;}
+    .m-header .overlay ul li a:after {content: ''; position: absolute; bottom: 0; left: 50%; width: 0%; transform: translateX(-50%); height: 3px; background: #fff; transition: .35s;}
+    @keyframes fadeInRight {
+        0% {
+          opacity: 0;
+          left: 20%;
+        }
+        100% {
+          opacity: 1;
+          left: 0;
+        }
+    }
 }
